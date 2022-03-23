@@ -14,14 +14,14 @@ describe('API REST controller', () => {
             .get('/files/data')
             .end((err, res) => {
                 let data = res.body
-                expect(data).to.be.an('array');
+                expect(data).to.be.an('array')
                 for (const each of data) {
-                    expect(each).to.be.have.property('file');
-                    expect(each).to.be.have.property('text');
-                    expect(each).to.be.have.property('number');
-                    expect(each).to.be.have.property('hex');
+                    expect(each).to.be.have.property('file')
+                    expect(each).to.be.have.property('text')
+                    expect(each).to.be.have.property('number')
+                    expect(each).to.be.have.property('hex')
                 }
-                done();
-            });
-    });
+                done()
+            })
+    }).timeout(10000)
 });
